@@ -84,11 +84,7 @@
                         stringData.push(moment(day).format('YYYY-MM-D') + "-" + moment(day).day());
                     }
                 }
-               
-                
-            
             }
-
             return stringData;
         }
         calendarGenerator = (data, event) => {
@@ -102,7 +98,7 @@
             let endOfMonth = moment(now).endOf('month');
             let dayWord;
             
-            $(".title-month").append(now.format("MMMM") + '' + now.format('YYYY'));
+            $(".title-month").append('<div class="text-lg uppercase font-bold">'+now.format("MMMM") + ' ' + now.format('YYYY')+'</div>');
            
             for(let i = startOfMonth.date(); i <= endOfMonth.date();i++) {
                
@@ -133,13 +129,7 @@
                 }
                 $(".calendar-row").append('<div class="px-6 py-2 border-b border-gray-500" id="'+ year + "-" + month + "-" + i + "-" + startOfMonth.day() +'">'+ i +'-'+ dayWord + '</div>');
               
-              
-                // $(".calendar-content").append('<div class="p-2 border-b border-black" id="'+ year + "-" + month + "-" + i + "-" + startOfMonth.day() +'">-</div>');
                 startOfMonth.add(1,'days');
-
-
-
-               
             }
             data.forEach(function(el){
                 $("#" + el).addClass("bg-green-300 text-white").append('<span class="pl-4">'+event+'</span>');
