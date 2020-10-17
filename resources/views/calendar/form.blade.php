@@ -25,45 +25,45 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="monday" id="monday" type="checkbox" class="text-sm form-checkbox" value="1"><label for="monday" class="text-white text-xs ml-1 uppercase font-bold">Monday</label> 
+                    <input name="monday" id="monday" type="checkbox" class="day_1 text-sm form-checkbox" value="1"><label for="monday" class="text-white text-xs ml-1 uppercase font-bold">Monday</label> 
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="tuesday" id="tuesday" type="checkbox" class="text-sm form-checkbox" value="2"><label for="tuesday" class="text-white text-xs ml-1 uppercase font-bold">Tuesday</label> 
+                    <input name="tuesday" id="tuesday" type="checkbox" class="day_2 text-sm form-checkbox" value="2"><label for="tuesday" class="text-white text-xs ml-1 uppercase font-bold">Tuesday</label> 
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="wednesday" id="wednesday" type="checkbox" class="text-sm form-checkbox" value="3"><label for="wednesday" class="text-white text-xs ml-1 uppercase font-bold">Wednesday</label> 
+                    <input name="wednesday" id="wednesday" type="checkbox" class="day_3 text-sm form-checkbox" value="3"><label for="wednesday" class="text-white text-xs ml-1 uppercase font-bold">Wednesday</label> 
             
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="thursday" id="thursday" type="checkbox" class="text-sm form-checkbox" value="4"><label for="thursday" class="text-white text-xs ml-1 uppercase font-bold">Thursday</label> 
+                    <input name="thursday" id="thursday" type="checkbox" class="day_4 text-sm form-checkbox" value="4"><label for="thursday" class="text-white text-xs ml-1 uppercase font-bold">Thursday</label> 
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="friday" id="friday" type="checkbox" class="text-sm form-checkbox" value="5"><label for="friday" class="text-white text-xs ml-1 uppercase font-bold">Friday</label> 
+                    <input name="friday" id="friday" type="checkbox" class="day_5 text-sm form-checkbox" value="5"><label for="friday" class="text-white text-xs ml-1 uppercase font-bold">Friday</label> 
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="saturday" id="saturday" type="checkbox" class="text-sm form-checkbox" value="6"><label for="saturday"class="text-white text-xs ml-1 uppercase font-bold">Saturday</label> 
+                    <input name="saturday" id="saturday" type="checkbox" class="day_6 text-sm form-checkbox" value="6"><label for="saturday"class="text-white text-xs ml-1 uppercase font-bold">Saturday</label> 
                 </div>
             </div>
             <div class="w-full md:w-1/2">
                 <div class="bg-gray-600 rounded m-2 p-2">
-                    <input name="sunday" id="sunday" type="checkbox" class="text-sm form-checkbox" value="0"><label for="sunday"class="text-white text-xs ml-1 uppercase font-bold">Sunday</label> 
+                    <input name="sunday" id="sunday" type="checkbox" class="day_0 text-sm form-checkbox" value="0"><label for="sunday"class="text-white text-xs ml-1 uppercase font-bold">Sunday</label> 
                 </div>
             </div>
           </div>
 
         </form>
         <div class="mx-1 my-2 w-full">
-            <button class="submit-btn p-2 bg-green-400 text-white w-full">Save</button>
+            <button class="submit-btn p-2 bg-green-400 text-white w-full focus:outline-none">Save</button>
         </div>
     </div>
 </div>

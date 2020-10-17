@@ -23,16 +23,23 @@
                 saveEvent(data);
             });
         });
+        assignData = (data) => {
+            $('#event').val(data['event_name']);
+            $('#datepicker_to').val(data['event_to']);
+            $('#datepicker_from').val(data['event_from']);
+            let res = data['daysOfWeek'].split(",");
+            for(let i=0; i<res.length; i++) { 
+                $('.day_'+res[i]).prop( "checked", true );
+            }
+        }
         fetchEvent = () => {
             $.ajax({
                 url: '{{ route("events.index") }}',
                 type: "GET",
                 success: function(response) {
-                    $('#event').val(response['event_name']);
-                    $('#datepicker_to').val(response['event_to']);
-                    $('#datepicker_from').val(response['event_from']);
+                    assignData(response);
                     let data = getMarkDays(response);
-                    calendarGenerator(data);
+                    calendarGenerator(data, response['event_name']);
                 },
             });
           
@@ -81,9 +88,10 @@
                 
             
             }
+
             return stringData;
         }
-        calendarGenerator = (data) => {
+        calendarGenerator = (data, event) => {
             $(".calendar-row").empty();
             $(".title-month").empty();
             let now = moment();
@@ -134,7 +142,7 @@
                
             }
             data.forEach(function(el){
-                $("#" + el).addClass("bg-green-300 text-white");
+                $("#" + el).addClass("bg-green-300 text-white").append('<span class="pl-4">'+event+'</span>');
             });
     }
     </script>
