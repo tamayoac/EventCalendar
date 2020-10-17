@@ -13,9 +13,9 @@
     <script>
         $('document').ready(function() {
             fetchEvent();
-            $('#datepicker_to').datepicker();
+            $('#event_to').datepicker();
 
-            $('#datepicker_from').datepicker();
+            $('#event_from').datepicker();
          
             $('.submit-btn ').on('click', function(e) {
                 e.preventDefault();
@@ -24,13 +24,19 @@
             });
         });
         assignData = (data) => {
-            $('#event').val(data['event_name']);
-            $('#datepicker_to').val(data['event_to']);
-            $('#datepicker_from').val(data['event_from']);
-            let res = data['daysOfWeek'].split(",");
-            for(let i=0; i<res.length; i++) { 
-                $('.day_'+res[i]).prop( "checked", true );
+            $('#event_name').val(data['event_name']);
+            $('#event_to').val(data['event_to']);
+            $('#event_from').val(data['event_from']);
+
+            let daysOfWeek = data['daysOfWeek'];
+            if( daysOfWeek != undefined)
+            {
+                let res = daysOfWeek.split(",");
+                for(let i=0; i<res.length; i++) { 
+                    $('.day_'+res[i]).prop( "checked", true );
+                }
             }
+           
         }
         fetchEvent = () => {
             $.ajax({
@@ -54,18 +60,26 @@
                     toastr.success('Successfully Saved');
                 },
                 error: function(xhr) {
-                    console.log(xhr)
+                    if(xhr.status == 422) {
+                        let errors = xhr.responseJSON.errors;
+                        $('.message').remove();
+                        $.each(errors, function (key, value) {
+                            const errorSelector = $("#"+key);
+                            errorSelector.after("<div id='message_"+key+"' class='message text-red-600 text-sm'>"+value+"</div>");
+                        });
+                    }
                 }
             });
         }
         convertStringToInt = (data) => {
             let myArray = [];
-           
-            let res = data.split(",");
-          
-            for(let i=0; i<res.length; i++) { 
-                myArray.push(parseInt(res[i]));
+            if(data != undefined) {
+                let res = data.split(",");
+                for(let i=0; i<res.length; i++) { 
+                    myArray.push(parseInt(res[i]));
+                }
             }
+           
             return myArray;
         }
         getMarkDays = (data) => {

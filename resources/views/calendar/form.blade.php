@@ -6,20 +6,20 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Event
                 </label>
-                <input name="event_name"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="event" type="text" placeholder="Event">
+                <input name="event_name"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="event_name" type="text" placeholder="Event">
           </div>
           <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 px-1">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="datepicker_from">
                     From
                   </label>
-                  <input name="event_from" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="datepicker_from" type="text" placeholder="Event">
+                  <input name="event_from" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="event_from" type="text" placeholder="Event">
               </div>
               <div class="w-full md:w-1/2 px-1">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="datepicker_to">
                     To
                   </label>
-                  <input name="event_to" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="datepicker_to" type="text" placeholder="Event">
+                  <input name="event_to" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="event_to" type="text" placeholder="Event">
               </div>
           </div>
           <div class="flex flex-wrap">

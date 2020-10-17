@@ -22,62 +22,13 @@ class CalendarController extends Controller
     {
         $validated = $request->validated();
       
-        $daysOfWeek = $this->implodeDays($validated);
-        
-        $event = Event::find(1);
+        $command = new \App\Service\Event\StoreEvent();
 
-        if(!$event) {
-            $event = new Event();
-        }
-
-        $event->event_name = $validated['event_name'];
-        $event->event_from = $validated['event_from'];
-        $event->event_to = $validated['event_to'];
-        $event->daysOfWeek = $daysOfWeek;
-        $event->save();
-     
-
+        $event = $command->execute($validated, 1);
+    
         return response()->json([
             "message" => "Successfully Saved",
             "data" => $event
         ], Response::HTTP_OK);
-    }
-    public function implodeDays($data)
-    {
-        
-        $daysOfWeek = array();
-        
-        if(isset($data['monday']))
-        {
-            array_push($daysOfWeek, $data['monday']);
-        }
-        if (isset($data['tuesday']))
-        {
-            array_push($daysOfWeek, $data['tuesday']);
-        }
-        if (isset($data['wednesday']))
-        {
-            array_push($daysOfWeek, $data['wednesday']);
-        }
-        if (isset($data['thursday']))
-        {
-            array_push($daysOfWeek, $data['thursday']);
-        }
-        if (isset($data['friday']))
-        {
-            array_push($daysOfWeek, $data['friday']);
-        }
-        if (isset($data['saturday']))
-        {
-            array_push($daysOfWeek, $data['saturday']);
-        }
-        if (isset($data['sunday']))
-        {
-            array_push($daysOfWeek, $data['sunday']);
-        }
-
-        $converted = implode(",", $daysOfWeek);
-
-        return $converted;
     }
 }
